@@ -3,17 +3,27 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LivroListaComponent } from './livro-lista/livro-lista.component';
+import { LivroDadosComponent } from './livro-dados/livro-dados.component';
+import { ControleEditoraService } from './controle-editora.service';
+import { ControleLivrosService } from './controle-livros.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LivroListaComponent,
+    LivroDadosComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    ControleEditoraService,
+    ControleLivrosService
   ],
   bootstrap: [AppComponent]
 })
